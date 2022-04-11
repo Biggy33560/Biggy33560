@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur de paiement- La boutique tahitienne
+{% endblock %}
+
+{% block content %}
+	<h2>erreur de votre commande</h2>
+	<p>Bonjour
+		<strong>{{ order.user.firstname }}
+			{{ order.user.lastname }}</strong>
+
+		Il semblerait que votre paiement est échoué pour votre commande n°<strong>{{order.reference}}</strong>.
+								Une confirmation vient de vous être envoyée par mail
+		<strong>{{order.user.email}}</strong>.</p>
+	<hr>
+	
+    <a href="{{path('app_order')}}">Réessayer le paiement</a>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!
+{% endblock %}
+
+{% block content %}
+
+	<div class="example-wrapper">
+		<h1>Mon compte</h1>
+
+		Bienvenue
+		{{app.user.firstname}}
+		sur votre compte
+		{% if is_granted('ROLE_ADMIN') %}
+			<a class="nav-link" href="/admin">Vous êtes administrateur</a>
+		{% endif %}
+		<a class="nav-link" href="{{path('account_password')}}">Modifier mon mot de passe</a>
+
+		<a class="nav-link" href="{{path('app_account_address')}}">Gerer mes adresses</a>
+
+		<a class="nav-link" href="{{path('app_account_order')}}">Mes commandes</a>
+
+
+	</div>
+{% endblock %}
